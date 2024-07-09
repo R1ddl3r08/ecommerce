@@ -1,0 +1,106 @@
+@use '../abstracts/mixins' as mix;
+@use "../abstracts/variables" as var;
+@use 'sass:math';
+
+
+#modal-root {
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 900;
+    }
+    
+    .modal {
+        position: fixed;
+        top: 10%;
+        right: 0px;
+        background: white;
+        padding: 20px;
+        z-index: 1001;
+        width: 30%;
+        max-height: 550px;
+        overflow-y: auto;
+        .cart {
+            padding: 10px;
+        
+            .cart-item {
+                display: flex;
+                align-items: center;
+        
+                .item-details {
+                    flex-basis: 70%;
+                    .item-name{
+                        font-size: 16px;
+                        margin-bottom: 5px;
+                    }
+                    h3{
+                        font-weight: normal;
+                        font-size: 14px;
+                        margin: 5px 0;
+                    }
+                    .item-price{
+                        margin-bottom: 5px;
+                    }
+        
+                    .item-attributes{
+                        .attribute-set{
+                            margin: 5px 0;
+                            .attributes{
+                                display: flex;
+                                .attribute{
+                                    .inner-attribute {
+                                        width: 30px;
+                                        height: 30px;
+                                        font-size: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+        
+                .cart-item-actions{
+                    height: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    margin: 0px 10px;
+        
+                    button {
+                        width: 20px;
+                        height: 20px;
+                        background-color: var.$background-color-base;
+                        border: 1px solid black;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+        
+                .image {
+                    flex-basis: 33%;
+                }
+            }
+        }
+    }
+    
+    #modal-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        
+        .place-order-button:disabled {
+            background: gray;
+            cursor: not-allowed;
+        }
+    }
+}
+
+
+  
+
